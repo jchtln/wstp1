@@ -1,0 +1,53 @@
+//sert à créer un num etu
+POST https://pdicost.univ-orleans.fr/.m1ws/enjoy/student
+Accept: */*
+Content-type: application/x-www-form-urlencoded
+
+numeroEtudiant=o71910235
+
+###
+GET https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235
+
+###
+PUT https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235/identity
+Content-type: application/xml
+
+<Etudiant>
+    <numeroEtudiant>o71910235</numeroEtudiant>
+    <nom>chatelin</nom>
+    <prenom>julien</prenom>
+    <adresse/>
+    <codePostal/>
+    <ville/>
+</Etudiant>
+
+###
+PATCH https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235/location
+Content-Type: application/json
+
+{
+  "adresse": "1 avenue de Paris"
+}
+
+###
+PATCH https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235/location
+Content-Type: application/json
+
+{
+  "codePostal": "45000"
+}
+
+###
+PATCH https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235/location
+Content-Type: application/json
+
+{
+  "ville": "Orléans"
+}
+
+###
+GET https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235/token
+
+###
+POST https://pdicost.univ-orleans.fr/.m1ws/enjoy/student/o71910235/token
+token:T3Jsw6lhbnMxIGF2ZW51ZSBkZSBQYXJpczQ1MDAwY2hhdGVsaW5qdWxpZW5vNzE5MTAyMzU=
