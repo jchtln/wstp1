@@ -4,7 +4,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import exceptions.*;
 import proxy.dto.EtatPartie;
 
+import java.net.URI;
 import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
 import java.util.List;
 
 public class MotusProxyImpl implements MotusProxy{
@@ -15,7 +17,11 @@ public class MotusProxyImpl implements MotusProxy{
 
     @Override
     public String creerUnCompte(String pseudo) throws PseudoDejaPrisException {
-        return null;
+        HttpRequest request = HttpRequest.newBuilder().build()
+                .uri(URI.create("http://localhost:8080/motus/joueur?pseudo"+pseudo))
+                .POST(HttpRequest.BodyPublishers.noBody())
+                .build();
+
     }
 
     @Override

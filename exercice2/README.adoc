@@ -26,6 +26,33 @@ Ce Web service permet :
 
 . Dresser le tableau des URI pour bien comprendre le web-service.
 
+|===
+|Méthode |URI |Description |
+
+|POST
+|/joueur
+|Créer un utilisateur
+| 201 Created avec un token en header ou
+
+409 (pseudo déja pris)
+
+
+|POST
+|/partie
+|Créer une partie
+|
+
+|PUT
+|/partie
+|Proposer un mot
+|
+
+|GET
+|/partie/nbcoups
+|Récupérer les mots proposés
+|
+|===
+
 . Jouer un scénario en utilisant le client REST :
 .. L'utilisateur crée un compte.
 .. L'utilisateur crée une partie.

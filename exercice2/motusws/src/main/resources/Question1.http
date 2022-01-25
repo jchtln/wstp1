@@ -1,0 +1,30 @@
+###Création du joueur julien  retourne un token
+POST http://localhost:8080/motus/joueur?pseudo=ju
+
+###Création de la partie retourne un tokenPartie
+POST http://localhost:8080/motus/partie?token
+token:wsmY/EDf8vw8zwXoUIByiTnJWlGHdeLeX8KPJlG94ZtrWGPpLP8/wI4FoLYSg+7zMHzAeIWr/jZ0bTehcswISA==
+
+###jouer
+PUT http://localhost:8080/motus/partie?proposition=abeille&tokenPartie
+tokenPartie: 7VUxIdGYqFVK7U8EjMgeyAa1INF/51qDy8ad79SDlK/VSAdqhMymU+kKd8aCXdUvJqTIV+qRNiSsvBNMWwTAWYEGjrOEZVcLYtmEykBuhZk=
+
+###historique essais
+GET http://localhost:8080/motus/partie?tokenPartie
+tokenPartie: 7VUxIdGYqFVK7U8EjMgeyAa1INF/51qDy8ad79SDlK/VSAdqhMymU+kKd8aCXdUvJqTIV+qRNiSsvBNMWwTAWYEGjrOEZVcLYtmEykBuhZk=
+
+###récuperer nb essais
+GET http://localhost:8080/motus/partie/nbcoups?tokenPartie
+tokenPartie: 7VUxIdGYqFVK7U8EjMgeyAa1INF/51qDy8ad79SDlK/VSAdqhMymU+kKd8aCXdUvJqTIV+qRNiSsvBNMWwTAWYEGjrOEZVcLYtmEykBuhZk=
+
+###jouer
+PUT http://localhost:8080/motus/partie?proposition=metmbre&tokenPartie
+tokenPartie: 7VUxIdGYqFVK7U8EjMgeyAa1INF/51qDy8ad79SDlK/VSAdqhMymU+kKd8aCXdUvJqTIV+qRNiSsvBNMWwTAWYEGjrOEZVcLYtmEykBuhZk=
+
+###jouer
+PUT http://localhost:8080/motus/partie?proposition=mimosas&tokenPartie
+tokenPartie: 7VUxIdGYqFVK7U8EjMgeyAa1INF/51qDy8ad79SDlK/VSAdqhMymU+kKd8aCXdUvJqTIV+qRNiSsvBNMWwTAWYEGjrOEZVcLYtmEykBuhZk=
+
+###jouer
+PUT http://localhost:8080/motus/partie?proposition=mimames&tokenPartie
+tokenPartie: 7VUxIdGYqFVK7U8EjMgeyAa1INF/51qDy8ad79SDlK/VSAdqhMymU+kKd8aCXdUvJqTIV+qRNiSsvBNMWwTAWYEGjrOEZVcLYtmEykBuhZk=
