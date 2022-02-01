@@ -32,6 +32,8 @@ Ce Web service permet :
 |POST
 |/joueur
 |Créer un utilisateur
+
+un parametre pseudo
 | 201 Created avec un token en header ou
 
 409 (pseudo déja pris)
@@ -40,17 +42,62 @@ Ce Web service permet :
 |POST
 |/partie
 |Créer une partie
-|
+
+un token en header
+| 201 avec un tokenPartie en header
+
+400 (idendite non valide)
+
+401 (joueur non valide)
+
 
 |PUT
 |/partie
 |Proposer un mot
-|
+
+tokenPartie header
+
+proposition param
+
+|200 avec un EtatPartie dans le body
+
+404 (Mot inexistant)
+
+406 (MaxNbCOupsException)
+
+400 (TokenPartie non valide)
+
+
+|GET
+|/partie/
+|Récupérer les mots proposés
+
+tokenPartie header
+
+|200 avec Liste de String (mots joués)
+
+404 (Partie inexistante)
+
+400 (TokenPartie non valide)
 
 |GET
 |/partie/nbcoups
-|Récupérer les mots proposés
-|
+
+| nbes de coups joués
+
+tokenPartie header
+
+| 200 avec Integer nbs de coups joués
+
+404 (Partie inexistante)
+
+400 (TokenPartie non valide)
+
+
+
+
+
+
 |===
 
 . Jouer un scénario en utilisant le client REST :

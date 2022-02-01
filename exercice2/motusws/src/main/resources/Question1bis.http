@@ -1,0 +1,33 @@
+###Création du joueur julien   - retourne un token
+POST http://localhost:8080/motus/joueur?pseudo=ju
+
+
+> {%
+client.global.set("token", response.headers.valueOf("token"));
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "Le joueur a été créé");
+});
+%}
+
+###Création de la partie  - retourne un tokenPartie
+POST http://localhost:8080/motus/partie?token
+token:{{token}}
+
+> {%
+client.global.set("tokenPartie", response.headers.valueOf("tokenPartie"));
+client.test("Request executed successfully", function() {
+  client.assert(response.status === 201, "La partie aurait du être créée");
+});
+%}
+
+###jouer
+PUT http://localhost:8080/motus/partie?proposition=xbeille&tokenPartie
+tokenPartie: {{tokenPartie}}
+
+###historique essais
+GET http://localhost:8080/motus/partie?tokenPartie
+tokenPartie: {{tokenPartie}}
+
+###récuperer nb essais
+GET http://localhost:8080/motus/partie/nbcoups?tokenPartie
+tokenPartie: {{tokenPartie}}
